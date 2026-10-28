@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Raghavendra Home Stay | Mopidevi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            600: '#800000',
+                            700: '#660000',
+                            800: '#4D0000',
+                            900: '#330000',
+                        },
+                        gold: {
+                            400: '#F3C654',
+                            500: '#D4A311',
+                            600: '#B28500',
+                        },
+                        cream: '#FAF7F2'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-cream text-gray-800 font-sans antialiased">
+
+    <!-- Top Info Bar -->
+    <div class="bg-maroon-900 text-gold-400 text-xs sm:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center"><i class="fas fa-clock mr-1.5"></i> 24/7 Customer Service</span>
+                <span class="hidden md:inline flex items-center"><i class="fas fa-shield-alt mr-1.5"></i> Safe & Secure Home</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:9989606123" class="hover:text-white transition flex items-center"><i class="fas fa-phone mr-1.5"></i> 9989606123</a>
+                <span class="text-maroon-600">|</span>
+                <a href="tel:8008861819" class="hover:text-white transition flex items-center"><i class="fas fa-phone mr-1.5"></i> 8008861819</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-gold-400/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Brand Logo & Name -->
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-maroon-800 text-gold-400 flex items-center justify-center text-xl font-bold border-2 border-gold-400 shadow">
+                    🕉️
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-bold text-maroon-800 leading-tight">Sri Raghavendra</h1>
+                    <p class="text-xs font-semibold tracking-wider text-gold-600 uppercase">Home Stay • Mopidevi</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+                <a href="#about" class="hover:text-maroon-800 transition">About Us</a>
+                <a href="#rooms" class="hover:text-maroon-800 transition">Rooms</a>
+                <a href="#amenities" class="hover:text-maroon-800 transition">Amenities</a>
+                <a href="#gallery" class="hover:text-maroon-800 transition">Gallery</a>
+                <a href="#location" class="hover:text-maroon-800 transition">Location</a>
+            </nav>
+
+            <!-- Quick Action Call/WhatsApp Buttons -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="https://wa.me/919989606123?text=Hello%20Sri%20Raghavendra%20Home%20Stay,%20I%20would%20like%20to%20inquire%20about%20room%20availability." 
+                   target="_blank" 
+                   class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold py-2 px-4 rounded-full shadow hover:shadow-lg transition flex items-center space-x-2">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="tel:9989606123" 
+                   class="bg-maroon-800 hover:bg-maroon-900 text-white text-xs sm:text-sm font-semibold py-2 px-4 rounded-full shadow hover:shadow-lg transition flex items-center space-x-2">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Call Now</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-maroon-800 text-2xl focus:outline-none" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-3">
+            <a href="#about" class="block text-gray-700 hover:text-maroon-800 font-medium py-1">About Us</a>
+            <a href="#rooms" class="block text-gray-700 hover:text-maroon-800 font-medium py-1">Rooms</a>
+            <a href="#amenities" class="block text-gray-700 hover:text-maroon-800 font-medium py-1">Amenities</a>
+            <a href="#gallery" class="block text-gray-700 hover:text-maroon-800 font-medium py-1">Gallery</a>
+            <a href="#location" class="block text-gray-700 hover:text-maroon-800 font-medium py-1">Location</a>
+            <div class="pt-2 flex flex-col space-y-2">
+                <a href="https://wa.me/919989606123?text=Hello%20Sri%20Raghavendra%20Home%20Stay,%20I%20would%20like%20to%20inquire%20about%20room%20availability." 
+                   class="bg-emerald-600 text-white text-center py-2 rounded-lg font-semibold flex items-center justify-center space-x-2">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Book via WhatsApp</span>
+                </a>
+                <a href="tel:9989606123" class="bg-maroon-800 text-white text-center py-2 rounded-lg font-semibold flex items-center justify-center space-x-2">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Call 9989606123</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white py-16 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4A311_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-gold-500/20 text-gold-400 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold border border-gold-400/30">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Chandamama Estates, Mopidevi</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                    Sri Guru Raghavendra <span class="text-gold-400">Home Stay</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-amber-100 font-light italic">
+                    "See & Stay – Safe, Secure & Comfortable Home Away From Home"
+                </p>
+                <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto lg:mx-0">
+                    Located conveniently in Chandamama Estates, Mopidevi. Perfect accommodation for families and pilgrims with spacious A/C and Non-A/C rooms, lift facility, kitchen space, and special pujari assistance.
+                </p>
+                
+                <!-- Hero Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
+                    <a href="tel:9989606123" class="bg-gold-500 hover:bg-gold-600 text-maroon-900 font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition text-center flex items-center justify-center space-x-2">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call for Booking</span>
+                    </a>
+                    <a href="https://wa.me/919989606123?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20stay%20at%20Sri%20Raghavendra%20Home%20Stay." 
+                       target="_blank" 
+                       class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition text-center flex items-center justify-center space-x-2">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>Instant WhatsApp Booking</span>
+                    </a>
+                </div>
+
+                <!-- Key Highlights Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-maroon-700 text-center">
+                    <div class="p-2 bg-maroon-800/60 rounded-lg border border-gold-500/20">
+                        <i class="fas fa-clock text-gold-400 text-xl mb-1"></i>
+                        <p class="text-xs font-semibold">24/7 Service</p>
+                    </div>
+                    <div class="p-2 bg-maroon-800/60 rounded-lg border border-gold-500/20">
+                        <i class="fas fa-elevator text-gold-400 text-xl mb-1"></i>
+                        <p class="text-xs font-semibold">Lift Facility</p>
+                    </div>
+                    <div class="p-2 bg-maroon-800/60 rounded-lg border border-gold-500/20">
+                        <i class="fas fa-pray text-gold-400 text-xl mb-1"></i>
+                        <p class="text-xs font-semibold">Pujari Service</p>
+                    </div>
+                    <div class="p-2 bg-maroon-800/60 rounded-lg border border-gold-500/20">
+                        <i class="fas fa-utensils text-gold-400 text-xl mb-1"></i>
+                        <p class="text-xs font-semibold">Kitchen Room</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image / Visual Representation -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md bg-white rounded-2xl p-3 shadow-2xl border-4 border-gold-400/40">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" 
+                         alt="Sri Raghavendra Home Stay Modern Living Area" 
+                         class="w-full h-72 sm:h-80 object-cover rounded-xl shadow-md">
+                    
+                    <div class="absolute bottom-6 left-6 right-6 bg-maroon-900/90 backdrop-blur-sm text-white p-3 rounded-lg border border-gold-400/30 text-center">
+                        <p class="font-semibold text-gold-400 text-sm">Spacious Living & Dining Spaces</p>
+                        <p class="text-xs text-gray-200">Equipped with 6x6 Double Beds & Modern Comforts</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Quick Bar -->
+    <section class="bg-gold-500 py-4 text-maroon-900 font-bold shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-phone-volume text-xl"></i>
+                <span class="text-sm sm:text-base">Direct Booking Phone Numbers:</span>
+            </div>
+            <div class="text-lg sm:text-xl space-x-4">
+                <a href="tel:9989606123" class="hover:underline">9989606123</a>
+                <span>|</span>
+                <a href="tel:8008861819" class="hover:underline">8008861819</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2">Welcome To</h2>
+            <h3 class="text-3xl font-extrabold text-maroon-800">Sri Guru Raghavendra Home Stay</h3>
+            <div class="w-20 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+                Located in the peaceful locality of Chandamama Estates in Mopidevi, Sri Raghavendra Home Stay provides pilgrims and travelers with a clean, safe, and welcoming home-like environment. Whether you are visiting the holy Mopidevi temple or traveling with family, our spacious accommodations ensure utmost peace of mind.
+            </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
+                <div class="w-14 h-14 bg-maroon-100 text-maroon-800 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Safe & Secure Home</h4>
+                <p class="text-gray-600 text-sm">Gated premises with 24/7 security, continuous maintenance, and 24-hour customer support for a worry-free stay.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
+                <div class="w-14 h-14 bg-maroon-100 text-maroon-800 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fas fa-gopuram"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Pilgrim Convenient</h4>
+                <p class="text-gray-600 text-sm">Special Pujari facility (ప్రత్యేక పూజారి) available for ritual guidance and ease of access to temple ceremonies in Mopidevi.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
+                <div class="w-14 h-14 bg-maroon-100 text-maroon-800 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Complete Comfort</h4>
+                <p class="text-gray-600 text-sm">Includes elevator (Lift) access, spacious living halls, attached dining spaces, and separate cooking rooms.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Accommodations -->
+    <section id="rooms" class="py-16 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2">Accommodations</h2>
+                <h3 class="text-3xl font-extrabold text-maroon-800">Room Options & Living Spaces</h3>
+                <p class="mt-2 text-gray-600">Choose from A/C and Non-A/C spacious rooms equipped with 6x6 double beds.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- A/C Room Card -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col bg-cream/30">
+                    <div class="relative bg-maroon-800 text-white p-6">
+                        <span class="absolute top-4 right-4 bg-gold-500 text-maroon-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Popular</span>
+                        <h4 class="text-2xl font-bold">Air Conditioned (A/C) Rooms</h4>
+                        <p class="text-amber-200 text-sm mt-1">Spacious A/C Rooms for Complete Comfort</p>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Premium Air Conditioning Unit</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Comfortable 6x6 Double Bed (6x6 బెడ్స్)</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Attached Clean Bathroom with Hot Water</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Access to Spacious Living & Dining Areas</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Power Backup / Inverter Support</li>
+                        </ul>
+                        <div class="pt-4 border-t border-gray-200 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Best rates guaranteed</span>
+                            <a href="https://wa.me/919989606123?text=Inquiry%20regarding%20A/C%20Room%20Booking" class="bg-maroon-800 hover:bg-maroon-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">Book A/C Room</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Non-A/C Room Card -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col bg-cream/30">
+                    <div class="relative bg-gray-800 text-white p-6">
+                        <h4 class="text-2xl font-bold">Non-A/C Rooms</h4>
+                        <p class="text-gray-300 text-sm mt-1">Ventilated & Budget-Friendly Stay</p>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Well-ventilated Spacious Rooms</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Quality 6x6 Double Bed</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Attached Clean Modern Bathroom</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> Access to Balcony & Living Hall</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-emerald-600 mr-2"></i> 24/7 Water & Electricity Backup</li>
+                        </ul>
+                        <div class="pt-4 border-t border-gray-200 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Affordable & clean</span>
+                            <a href="https://wa.me/919989606123?text=Inquiry%20regarding%20Non-A/C%20Room%20Booking" class="bg-gray-800 hover:bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">Book Non-A/C</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Amenities Section -->
+    <section id="amenities" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2">Our Features</h2>
+            <h3 class="text-3xl font-extrabold text-maroon-800">Key Facilities & Services</h3>
+            <p class="mt-2 text-gray-600"> Telugu Details: లిఫ్ట్ సౌకర్యం | విశాలమైన గదులు | 6x6 బెడ్స్ | ప్రత్యేక పూజారి | ప్రత్యేక వంటగది | ఇంటర్నెట్ సౌకర్యం </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-headset text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">24/7 Customer Service</h5>
+                <p class="text-xs text-gray-500 mt-1">Round-the-clock helpdesk support</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-elevator text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">Lift Facility</h5>
+                <p class="text-xs text-gray-500 mt-1">Easy elevator access for all floors</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-expand text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">Spacious Rooms</h5>
+                <p class="text-xs text-gray-500 mt-1">วิశాలమైన గదులు with natural lighting</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-bed text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">6x6 Double Beds</h5>
+                <p class="text-xs text-gray-500 mt-1">Comfortable spacious bedding</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-dharmachakra text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">Special Pujari Facility</h5>
+                <p class="text-xs text-gray-500 mt-1">ప్రత్యేక పూజారి service for rituals</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-sink text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">Separate Kitchen</h5>
+                <p class="text-xs text-gray-500 mt-1">ప్రత్యేక వంటగది room for self-cooking</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-couch text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">Living & Dining Hall</h5>
+                <p class="text-xs text-gray-500 mt-1">Plush plush seating & dining tables</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-gray-200/80 shadow-sm flex flex-col items-center text-center">
+                <i class="fas fa-wifi text-3xl text-maroon-800 mb-3"></i>
+                <h5 class="font-bold text-gray-800 text-sm sm:text-base">Internet / Power Backup</h5>
+                <p class="text-xs text-gray-500 mt-1">ఇంటర్నెట్ సౌకర్యం & Inverter Backup</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interior Gallery Showcase -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2">Photo Gallery</h2>
+                <h3 class="text-3xl font-extrabold text-maroon-800">Inside Our Homestay</h3>
+                <p class="mt-2 text-gray-600">Take a look at our clean interiors, polished flooring, sofa lounge, dining arrangement, and balcony view.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Living Hall -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" 
+                         alt="Living Room Lounge" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/80 via-transparent to-transparent flex items-end p-4">
+                        <div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Interior</span>
+                            <h5 class="text-white font-bold">Main Living Lounge & Sofas</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dining Area -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80" 
+                         alt="Dining Space & Kitchen Entrance" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/80 via-transparent to-transparent flex items-end p-4">
+                        <div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Dining</span>
+                            <h5 class="text-white font-bold">Dining Setup & Kitchen Counter</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Balcony & View -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" 
+                         alt="Balcony View" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/80 via-transparent to-transparent flex items-end p-4">
+                        <div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Exterior View</span>
+                            <h5 class="text-white font-bold">Spacious Balcony & Scenic View</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bedroom Space -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" 
+                         alt="Spacious Bedroom" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/80 via-transparent to-transparent flex items-end p-4">
+                        <div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Bedrooms</span>
+                            <h5 class="text-white font-bold">Comfortable Bedding & Wardrobes</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiled Flooring & Clean Corridors -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+                         alt="Pristine Tiled Interiors" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/80 via-transparent to-transparent flex items-end p-4">
+                        <div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Hygiene</span>
+                            <h5 class="text-white font-bold">Pristine Marble Tile Floors</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signboard Landmark -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-maroon-800 bg-maroon-900 flex flex-col justify-center items-center text-center p-6 text-white">
+                    <i class="fas fa-map-pin text-4xl text-gold-400 mb-3"></i>
+                    <h5 class="text-xl font-bold">Chandamama Estates</h5>
+                    <p class="text-amber-200 text-sm mt-1">Mopidevi, Andhra Pradesh</p>
+                    <p class="text-xs text-gray-300 mt-4 border-t border-maroon-700 pt-3">Easy access for all temple visitors and family stays</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Form Section -->
+    <section id="location" class="py-16 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact & Location Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600">Location & Details</h2>
+                        <h3 class="text-3xl font-extrabold text-maroon-800">Reach Us Easily</h3>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm space-y-4 border border-gray-200/80">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-maroon-100 text-maroon-800 flex items-center justify-center text-lg flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Address</h5>
+                                <p class="text-sm text-gray-600 mt-0.5">Sri Guru Raghavendra Home Stay</p>
+                                <p class="text-sm text-gray-600">Chandamama Estates - Mopidevi (చందమామ ఎస్టేట్స్ - మోపిదేవి)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 pt-2 border-t border-gray-100">
+                            <div class="w-10 h-10 rounded-full bg-maroon-100 text-maroon-800 flex items-center justify-center text-lg flex-shrink-0 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Phone Numbers</h5>
+                                <p class="text-sm text-gray-600"><a href="tel:9989606123" class="hover:text-maroon-800 font-semibold">9989606123</a></p>
+                                <p class="text-sm text-gray-600"><a href="tel:8008861819" class="hover:text-maroon-800 font-semibold">8008861819</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 pt-2 border-t border-gray-100">
+                            <div class="w-10 h-10 rounded-full bg-maroon-100 text-maroon-800 flex items-center justify-center text-lg flex-shrink-0 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Operating Hours</h5>
+                                <p class="text-sm text-gray-600">24 Hours / 7 Days a week customer assistance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Box -->
+                    <div class="bg-maroon-800 text-white p-6 rounded-2xl shadow-md text-center space-y-3">
+                        <h4 class="font-bold text-lg text-gold-400">Planning your Visit to Mopidevi Temple?</h4>
+                        <p class="text-xs text-gray-200">Call us ahead to reserve your A/C or Non-A/C room and arrange special pujari services for your visit.</p>
+                        <a href="tel:9989606123" class="inline-block bg-gold-500 hover:bg-gold-600 text-maroon-900 font-bold px-6 py-2.5 rounded-xl text-sm transition">
+                            <i class="fas fa-phone-alt mr-2"></i>Call 9989606123
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                    <h3 class="text-2xl font-bold text-maroon-800 mb-2">Send an Inquiry</h3>
+                    <p class="text-sm text-gray-600 mb-6">Fill out the form below and we will contact you immediately via call or WhatsApp.</p>
+
+                    <form id="inquiryForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Your Name *</label>
+                                <input type="text" id="name" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-maroon-800 focus:border-transparent outline-none text-sm" placeholder="Full Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Phone Number *</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-maroon-800 focus:border-transparent outline-none text-sm" placeholder="10-digit Mobile Number">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Room Preference</label>
+                                <select id="roomType" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-maroon-800 focus:border-transparent outline-none text-sm">
+                                    <option value="A/C Room">A/C Room</option>
+                                    <option value="Non-A/C Room">Non-A/C Room</option>
+                                    <option value="Multiple Rooms">Multiple Rooms / Entire Flat</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Expected Check-in Date</label>
+                                <input type="date" id="checkin" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-maroon-800 focus:border-transparent outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Message / Special Requests</label>
+                            <textarea id="message" rows="3" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-maroon-800 focus:border-transparent outline-none text-sm" placeholder="Number of guests, special pujari service requirement, etc."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-maroon-800 hover:bg-maroon-900 text-white font-bold py-3 rounded-lg shadow transition flex items-center justify-center space-x-2">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Booking Request via WhatsApp</span>
+                        </button>
+                    </form>
+
+                    <!-- Success Alert Message -->
+                    <div id="formSuccess" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-sm flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-emerald-600 text-lg"></i>
+                        <span>Redirecting to WhatsApp to send your booking inquiry...</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-maroon-900 text-white py-10 border-t-4 border-gold-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+                <div>
+                    <h4 class="text-xl font-bold text-gold-400">Sri Guru Raghavendra Home Stay</h4>
+                    <p class="text-xs text-gray-300 mt-1">Chandamama Estates - Mopidevi | Safe & Secure Family Stay</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-300">
+                    <a href="#about" class="hover:text-gold-400 transition">About</a>
+                    <a href="#rooms" class="hover:text-gold-400 transition">Rooms</a>
+                    <a href="#amenities" class="hover:text-gold-400 transition">Amenities</a>
+                    <a href="#gallery" class="hover:text-gold-400 transition">Gallery</a>
+                    <a href="#location" class="hover:text-gold-400 transition">Contact</a>
+                </div>
+
+                <div class="text-xs text-gray-400">
+                    <p>© <span id="year"></span> Sri Raghavendra Home Stay. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Bottom Action Bar for Mobile -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-2 z-40 flex gap-2 shadow-2xl">
+        <a href="tel:9989606123" class="flex-1 bg-maroon-800 text-white py-2.5 rounded-lg text-center font-bold text-xs flex items-center justify-center space-x-1">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call Now</span>
+        </a>
+        <a href="https://wa.me/919989606123?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20stay." 
+           target="_blank" 
+           class="flex-1 bg-emerald-600 text-white py-2.5 rounded-lg text-center font-bold text-xs flex items-center justify-center space-x-1">
+            <i class="fab fa-whatsapp text-sm"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking nav items
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission to WhatsApp
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const roomType = document.getElementById('roomType').value;
+            const checkin = document.getElementById('checkin').value || 'Not specified';
+            const message = document.getElementById('message').value || 'None';
+
+            const successBox = document.getElementById('formSuccess');
+            successBox.classList.remove('hidden');
+
+            const text = `Hello Sri Raghavendra Home Stay,%0A%0A` +
+                         `*New Booking Inquiry:*%0A` +
+                         `• *Name:* ${encodeURIComponent(name)}%0A` +
+                         `• *Phone:* ${encodeURIComponent(phone)}%0A` +
+                         `• *Room:* ${encodeURIComponent(roomType)}%0A` +
+                         `• *Check-in Date:* ${encodeURIComponent(checkin)}%0A` +
+                         `• *Details:* ${encodeURIComponent(message)}`;
+
+            setTimeout(() => {
+                window.open(`https://wa.me/919989606123?text=${text}`, '_blank');
+                document.getElementById('inquiryForm').reset();
+                successBox.classList.add('hidden');
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
